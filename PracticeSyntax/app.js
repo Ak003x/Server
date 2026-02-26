@@ -31,8 +31,9 @@ const emp = {
   id: "17",
   name: "Apple MacBook Pro 16",
   data: {
-    year: 2019,
-    price: 1849.99,
+    year: 2000,
+    price: 1000.99,
+    "AT":500,
     "CPU model": "Intel Core i9",
     "Hard disk size": "1 TB",
   },
@@ -44,7 +45,7 @@ async function api() {
     "https://api.restful-api.dev/objects",
 
     {
-      method: "POST",
+      method: "Post",
       headers: {
         "content-Type": "application/json",
         Accept: "application/json",
@@ -52,7 +53,7 @@ async function api() {
       body: JSON.stringify(emp),
     },
   );
-  console.log(data);
+  // console.log(data);
   let txt = await data.json();
   console.log(txt);
 }
