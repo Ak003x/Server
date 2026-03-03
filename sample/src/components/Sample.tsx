@@ -4,10 +4,10 @@ interface sampleProps {
   name: string;
   id: number;
   price: number;
+  show: string;
 }
 
 const Sample = ({ name, id, price }: sampleProps) => {
-
   return (
     <div>
       <div className="border border-gray-300 rounded-lg p-4 m-2 w-48 shadow-md bg-white">
