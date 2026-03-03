@@ -4,7 +4,7 @@ interface sampleProps {
   name: string;
   id: number;
   price: number;
-  show: string;
+  show: boolean;
 }
 
 const Sample = ({ name, id, price }: sampleProps) => {
