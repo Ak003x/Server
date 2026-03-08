@@ -1,5 +1,5 @@
 "use client";
-import React, { use, useState } from "react";
+import React, { useState, useEffect } from "react";
 
 interface sampleProps {
   name: string;
@@ -7,12 +7,20 @@ interface sampleProps {
   price: number;
   show: boolean;
   msg: string;
+  handleDelete: (id: number) => void;
 }
 
-const Sample = ({ name, id, price, show, msg }: sampleProps) => {
+const Sample = ({ name, id, price, show, msg, handleDelete }: sampleProps) => {
   const [products, setProducts] = useState(false);
 
-  const handleClick = (name: string, price: number) => {
+  const [dummy, setDummy] = useState(true);
+
+  useEffect(() => {
+    console.log("UseEffect called");
+    console.log(dummy);
+  }, [dummy]);
+
+  const handleClick = (price: number) => {
     setProducts(true);
     console.log(`${name} purchased with ${price}`);
   };
@@ -29,9 +37,21 @@ const Sample = ({ name, id, price, show, msg }: sampleProps) => {
         </p>
         <button
           className="bg-blue-500 text-white px-4 py-2 rounded"
-          onClick={() => handleClick(name, price)}
+          onClick={() => handleClick(20)}
         >
           Buy Now
+        </button>
+        <button
+          className="bg-blue-500 text-white px-4 py-2 rounded"
+          onClick={() => handleDelete(id)}
+        >
+          Delete
+        </button>
+        <button
+          className="px-4 my-5 py-5  rounded flex bg-blue-500 text-white"
+          onClick={() => setDummy(false)}
+        >
+          dummy
         </button>
       </div>
     </div>
