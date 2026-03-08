@@ -6,7 +6,7 @@ const products = [
     show: true,
     msg: "purchased",
   },
-  {
+        {
     id: 2,
     name: "Banana",
     price: 50,
@@ -68,7 +68,7 @@ const products = [
     price: 220,
     show: true,
     msg: "purchased",
-  },
+   },
 ];
 
 export default products;
