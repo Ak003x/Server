@@ -5,15 +5,17 @@ interface sampleProps {
   id: number;
   price: number;
   show: boolean;
+  msg: string;
 }
 
-const Sample = ({ name, id, price }: sampleProps) => {
+const Sample = ({ name, id, price, show, msg }: sampleProps) => {
   return (
     <div>
       <div className="border border-gray-300 rounded-lg p-4 m-2 w-48 shadow-md bg-white">
         <h1 className="text-blue-500 text-xl font-bold mb-2"> {name}</h1>
         <p className="text-green-500 text-base mb-1"> ID:{id}</p>
         <p className="ext-red-500 text-base"> Price:{price}</p>
+        <p className="text-gray-500 text-base"> Message: {msg}</p>
       </div>
     </div>
   );
