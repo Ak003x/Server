@@ -13,7 +13,7 @@ const Pages = () => {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       const fetchPost = async () => {
         try {
           const response = await fetch(
@@ -37,7 +37,12 @@ const Pages = () => {
         }
       };
       fetchPost();
-    }, 1000);
+    }, 5000);
+
+    return () => {
+      clearTimeout(timer);
+      console.log("clean up");
+    };
   }, []);
 
   if (loading) return <p>Loading...</p>;
@@ -60,6 +65,7 @@ const Pages = () => {
             );
           })
         : "something Wrong"}
+
     </div>
   );
 };
