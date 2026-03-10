@@ -13,6 +13,9 @@ const Pages = () => {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
     const timer = setTimeout(() => {
       const fetchPost = async () => {
         try {
@@ -41,7 +44,9 @@ const Pages = () => {
 
     return () => {
       clearTimeout(timer);
-      console.log("clean up");
+      console.log("clean up");// to clean up
+      controller.abort();   // to  abort 
+      console.log("aborted");
     };
   }, []);
 
@@ -65,7 +70,6 @@ const Pages = () => {
             );
           })
         : "something Wrong"}
-
     </div>
   );
 };
