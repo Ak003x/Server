@@ -1,4 +1,5 @@
 import Cards from "@/components/Cards";
+import Pages from "@/components/Pages";
 import Sample from "@/components/Sample";
 import products from "@/data/data";
 import React from "react";
@@ -6,7 +7,8 @@ import React from "react";
 const page = () => {
   return (
     <div>
-      <Cards />
+      {/* <Cards /> */}
+      <Pages/>
     </div>
   );
 };
