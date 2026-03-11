@@ -29,7 +29,8 @@ const CountPage = () => {
         <button className="bg-purple-500 text-white px-6 py-2 rounded-lg"
           onClick={() => {
             ref.current++;
-            console.log("Ref value:", ref.current); // only in console, not UI
+            setCount(ref.current)
+            console.log("Ref value:", ref.current); 
           }}
         >
           Ref++ (no render)
