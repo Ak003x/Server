@@ -14,8 +14,6 @@ const page = () => {
         >
           → Go to Test Route
         </Link>
-
-        <Link href="/about">About</Link>
       </div>
       {/* <Cards /> */}
       <Pages />
