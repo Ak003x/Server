@@ -5,8 +5,11 @@ import React from "react";
 import TestPage from "./test/page";
 import EnhancedComponents from "@/components/HelloWorld";
 import Button from "@/components/Button";
+import WithClicktracking from "@/components/WithClicktracking";
 
 const page = () => {
+  const ButtonWithTracking = WithClicktracking(Button);
+
   return (
     <div>
       {/* <div className="flex gap-4 px-6 py-4 bg-gray-100 border-b border-gray-300">
@@ -20,7 +23,10 @@ const page = () => {
       {/* <Cards />
        <Pages />  */}
       {/* <EnhancedComponents name={"Ak"} /> */}
-      <Button label={"Hello All"}/>
+      <ButtonWithTracking
+        label="paynow "
+        trackingInfo={{ amount: "2000", user: "Akash" }}
+      />
     </div>
   );
 };
