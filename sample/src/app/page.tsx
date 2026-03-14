@@ -4,6 +4,7 @@ import Link from "next/link";
 import React from "react";
 import TestPage from "./test/page";
 import EnhancedComponents from "@/components/HelloWorld";
+import Button from "@/components/Button";
 
 const page = () => {
   return (
@@ -18,7 +19,8 @@ const page = () => {
       </div> */}
       {/* <Cards />
        <Pages />  */}
-      <EnhancedComponents name={"Ak"} />
+      {/* <EnhancedComponents name={"Ak"} /> */}
+      <Button label={"Hello All"}/>
     </div>
   );
 };
